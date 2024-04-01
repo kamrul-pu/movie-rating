@@ -77,7 +77,7 @@ class User(AbstractBaseUser, BaseModelWithUID, PermissionsMixin):
         unique=True,
     )
     slug = AutoSlugField(
-        populate_from="first_name",
+        populate_from="name",
         unique=True,
         db_index=True,
     )
