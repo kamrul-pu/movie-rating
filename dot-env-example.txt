@@ -1,6 +1,7 @@
 SECRET_KEY = django-insecure-&$+dfgwxbu#vv3nxs5t@evzwm(x^6sskq4ux*e@en9&p=*1tp&
 ENABLE_SILK = True
 DEBUG = True
-MASTER_DATABASE_URL = 
+# DATABASE_URL=postgres://dev-user:password@pgdb:5432/dev_db
+DATABASE_URL=sqlite://///home/kamrul/Desktop/Personal/movie-rating/dev_db.sqlite3
 REDIS_SERVER_IP = 
 REDIS_SERVER_PORT = 
