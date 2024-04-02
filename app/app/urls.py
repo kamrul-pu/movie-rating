@@ -23,6 +23,8 @@ urlpatterns = [
     path("api/v1/token/verify", TokenVerifyView.as_view(), name="token_verify"),
     # include user endpoints
     path("api/v1/users", include("core.rest.urls.user"), name="user-urls"),
+    # include movies endpoints
+    path("api/v1/movies", include("movie.rest.urls.base"), name="movies-urls"),
 ]
 
 if settings.DEBUG:
