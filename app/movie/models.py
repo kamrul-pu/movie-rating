@@ -23,6 +23,9 @@ class Movie(BaseModelWithUID):
     class Meta:
         verbose_name_plural = "movies"
 
+    def __str__(self) -> str:
+        return f"{self.name} - {self.genre}"
+
 
 class Ratings(BaseModelWithUID):
     user = models.ForeignKey(
@@ -43,3 +46,10 @@ class Ratings(BaseModelWithUID):
 
     class Meta:
         verbose_name_plural = "ratings"
+        unique_together = (
+            "user",
+            "movie",
+        )
+
+    def __str__(self) -> str:
+        return f"{self.movie} - {self.rating}"
