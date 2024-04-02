@@ -59,6 +59,7 @@ DJANGO_APPS = [
 PROJECT_APPS = [
     "core",
     "common",
+    "movie",
 ]
 THIRD_PARTY_APPS = [
     "corsheaders",
