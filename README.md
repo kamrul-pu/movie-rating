@@ -27,7 +27,7 @@ These features cover the essential functionalities required for the movie rating
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/movie-rating-system.git
+git clone https://github.com/kamrul-pu/movie-rating.git
 
 2. Create a virtual environment then active the virtual environment
 
