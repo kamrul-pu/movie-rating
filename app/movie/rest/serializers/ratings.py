@@ -4,10 +4,14 @@ from rest_framework import status
 from rest_framework import serializers
 
 
-from movie.models import Ratings
+from movie.models import Movie, Ratings
 
 
 class RatingsListSerializer(serializers.ModelSerializer):
+    movie = serializers.PrimaryKeyRelatedField(
+        write_only=True, queryset=Movie().get_all_actives()
+    )
+
     class Meta:
         model = Ratings
         fields = (
