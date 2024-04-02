@@ -94,6 +94,9 @@ python app/manage.py createsuperuser
 **Endpoint**: `/api/v1/users`
 - **Description**: Get a list of users and create new users.
 
+**Endpoint**: `/api/v1/users/pk`
+- **Description**: Get the detail of user and update delete endpoint.
+
 **Endpoint**: `/api/v1/users/registration`
 - **Description**: Register a new user.
 
