@@ -118,7 +118,12 @@ WSGI_APPLICATION = "app.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-DATABASE_URL = os.environ.get("DATABASE_URL", "")
+# if debug mode use local sqlite3 db otherwise get db url from environment variable
+if DEBUG:
+    DATABASE_URL = os.path.join(REPO_DIR, "dev_db.sqlite3")
+else:
+    DATABASE_URL = os.environ.get("DATABASE_URL", "")
+
 DATABASES = {
     "default": dj_database_url.config(
         default=DATABASE_URL,
