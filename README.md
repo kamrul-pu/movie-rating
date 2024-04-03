@@ -71,13 +71,14 @@ python app/manage.py createsuperuser
 ## Problems Faced
 
 - No local database usage was allowed, so SQLite was chosen as a lightweight database solution.
+- Can be connect with postgres of mysql data by providing links
 - Implementing JWT authentication for user login required additional setup and configuration.
-- Ensuring proper error handling and validation for API requests and responses.
 
 ## API Documentation
 
 **Endpoint**: `/api/docs`
 - **Description**: Documentation and endpoints of the system.
+- **Description**: For login in the api docs please click on authorize and then provide email and password.
 
 ### Authentication
 
@@ -108,8 +109,8 @@ python app/manage.py createsuperuser
 **Endpoint**: `/api/v1/movies`
 - **Description**: Get a list of movies and create new movies.
 
-**Endpoint**: `/api/v1/movies/search?name=avengers`
-- **Description**: Search for a movie by name.
+**Endpoint**: `/api/v1/movies?name=avengers`
+- **Description**: Search for a movie by name with average rating.
 
 **Endpoint**: `/api/v1/movies/ratings`
 - **Description**: Get a list of movie ratings and create new ratings.

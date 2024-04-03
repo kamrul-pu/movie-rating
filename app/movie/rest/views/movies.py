@@ -26,26 +26,7 @@ class MovieList(ListCreateAPIView):
         # If 'name' parameter is provided, filter queryset to include only movies with names containing the specified value (case-insensitive)
         if name:
             queryset = queryset.filter(name__icontains=name)
-
-        return queryset  # Return the queryset for further processing
-
-
-class MovieSearch(ListAPIView):
-    permission_classes = (IsAuthenticated,)  # Define permissions required for this view
-    serializer_class = MovieListSerializer  # Specify the serializer class to be used
-
-    def get_queryset(self):
-        # Retrieve all active movies from the database
-        queryset = Movie().get_all_actives()
-
-        # Get the 'name' query parameter from the request, if present
-        name = self.request.query_params.get("name", "")
-
-        # If 'name' parameter is provided, filter queryset to include only movies with names containing the specified value (case-insensitive)
-        if name:
-            queryset = queryset.filter(name__icontains=name)
-
-        # Annotate each movie in the queryset with the average rating based on associated ratings
-        queryset = queryset.annotate(average_rating=Avg("movie_ratings__rating"))
+            # Annotate each movie in the queryset with the average rating based on associated ratings
+            queryset = queryset.annotate(average_rating=Avg("movie_ratings__rating"))
 
         return queryset  # Return the queryset for further processing
