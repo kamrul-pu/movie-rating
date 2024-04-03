@@ -242,7 +242,7 @@ VERSATILEIMAGEFIELD_SETTINGS = {
 
 
 VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
-    "product_images": [
+    "profile_images": [
         ("full_size", "url"),
         ("small", "thumbnail__400x400"),
         ("medium", "thumbnail__600x600"),
